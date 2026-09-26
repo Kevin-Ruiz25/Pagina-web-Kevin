@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TecnoCastellon | Soporte técnico</title>
+
+  <style>
+    :root {
+      --azul: #2563eb;
+      --oscuro: #0f172a;
+      --gris: #475569;
+      --fondo: #f1f5f9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--oscuro);
+      background: var(--fondo);
+    }
+
+    .contenedor {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: var(--azul);
+      text-decoration: none;
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      list-style: none;
+    }
+
+    .menu a {
+      color: var(--oscuro);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .menu a:hover {
+      color: var(--azul);
+    }
+
+    .portada {
+      background: linear-gradient(135deg, #0f172a, #1e40af);
+      color: white;
+      padding: 100px 0;
+    }
+
+    .etiqueta {
+      color: #bfdbfe;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.12;
+      max-width: 800px;
+      margin: 20px 0;
+    }
+
+    .portada p {
+      max-width: 600px;
+      color: #dbeafe;
+      font-size: 19px;
+      margin-bottom: 30px;
+    }
+
+    .boton {
+      display: inline-block;
+      background: var(--azul);
+      color: white;
+      padding: 13px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .boton:hover {
+      background: #1d4ed8;
+    }
+
+    .portada .boton {
+      background: white;
+      color: #1e40af;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .descripcion {
+      color: var(--gris);
+      margin-bottom: 30px;
+    }
+
+    .tarjetas {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .tarjeta {
+      background: white;
+      padding: 30px;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px #0f172a08;
+    }
+
+    .numero {
+      display: inline-block;
+      color: var(--azul);
+      background: #eff6ff;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .tarjeta h3 {
+      margin-bottom: 12px;
+      font-size: 21px;
+    }
+
+    .tarjeta p {
+      color: var(--gris);
+    }
+
+    .nosotros {
+      background: white;
+    }
+
+    .nosotros p {
+      max-width: 750px;
+      color: var(--gris);
+      margin-top: 15px;
+    }
+
+    .contacto {
+      text-align: center;
+    }
+
+    .nota {
+      font-size: 14px;
+      color: var(--gris);
+      margin-top: 18px;
+    }
+
+    footer {
+      padding: 25px 0;
+      background: var(--oscuro);
+      color: #cbd5e1;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    a:focus-visible {
+      outline: 3px solid #f59e0b;
+      outline-offset: 5px;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        flex-direction: column;
+        padding: 16px 0;
+        gap: 12px;
+      }
+
+      .menu {
+        justify-content: center;
+        gap: 16px;
+        font-size: 14px;
+      }
+
+      .portada {
+        padding: 65px 0;
+      }
+
+      .tarjetas {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 50px 0;
+      }
+
+      html {
+        scroll-padding-top: 125px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="contenedor" aria-label="Navegación principal">
+      <a class="logo" href="#inicio">TecnoCastellon</a>
+
+      <ul class="menu">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="portada" id="inicio">
+      <div class="contenedor">
+        <span class="etiqueta">Tecnología te acompaña</span>
+        <h1>Soluciones prácticas para tu mundo digital.</h1>
+        <p>
+          Mantenimiento, soporte y configuración de equipos
+          para que puedas concentrarte en lo que necesitas hacer.
+        </p>
+        <a class="boton" href="#servicios">Explorar servicios →</a>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="contenedor">
+        <h2>Nuestros servicios</h2>
+        <p class="descripcion">
+          Conoce cómo podemos ayudarte con tus equipos.
+        </p>
+
+        <div class="tarjetas">
+          <article class="tarjeta">
+            <span class="numero">01</span>
+            <h3>Mantenimiento</h3>
+            <p>
+              Limpieza y revisión de computadoras para mejorar
+              su funcionamiento y prevenir fallas.
+            </p>
+          </article>
+
+          <article class="tarjeta">
+            <span class="numero">02</span>
+            <h3>Soporte técnico</h3>
+            <p>
+              Diagnóstico de problemas, instalación de programas
+              y asistencia con sistemas operativos.
+            </p>
+          </article>
+
+          <article class="tarjeta">
+            <span class="numero">03</span>
+            <h3>Redes y conectividad</h3>
+            <p>
+              Configuración de redes Wi-Fi, routers e impresoras
+              para mantener tus dispositivos conectados.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="nosotros" id="nosotros">
+      <div class="contenedor">
+        <h2>Sobre nosotros</h2>
+        <p>
+          TecnoCastellon es una propuesta de servicios informáticos
+          enfocada en ayudar a personas y pequeños negocios.
+          Nuestro objetivo es ofrecer atención clara y soluciones
+          adaptadas a cada necesidad.
+        </p>
+        <p>
+          Puedes personalizar esta sección con la historia,
+          experiencia y objetivos de tu negocio.
+        </p>
+      </div>
+    </section>
+
+    <section class="contacto" id="contacto">
+      <div class="contenedor">
+        <h2>¿Necesitas ayuda con tu equipo?</h2>
+        <p class="descripcion">
+          Cuéntanos qué problema tienes y qué servicio necesitas.
+        </p>
+
+        <!-- Reemplaza este correo por tu dirección real. -->
+        <a
+          class="boton"
+          href="mailto:contacto@example.com?subject=Solicitud%20de%20soporte"
+        >
+          Contactar por correo
+        </a>
+
+        <p class="nota">
+          El botón abre la aplicación de correo configurada en tu dispositivo.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="contenedor">
+      <p>© <span id="anio"></span> TecnoSoluciones.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Actualiza automáticamente el año del pie de página.
+    document.getElementById("anio").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
